@@ -16,7 +16,8 @@ Our ERD consists of seven tables with one-to-many relationships, meaning an elem
 Query 1:
     Create a view that shows movie_title,description,release date,movie genre and movie rating from movies table joined by movies_detailed table using movie_detailed_id. The query was filtered by WHERE clause, which was only showing the data that had movie rating more than 7.0, grouped by movie title. The view was called “decent_rating”.
 
-```use team08_0202;
+```
+use team08_0202;
 DROP VIEW IF exists decent_rating;
 use team08_0202;
 CREATE VIEW decent_rating AS
@@ -25,7 +26,8 @@ Date_correction,movie_genre,MAX(movie_rating)
 FROM movies
 JOIN movies_detail USING (movie_detail_id)
 WHERE movie_rating >= 7.0
-GROUP BY movie_title;```
+GROUP BY movie_title;
+```
 
 ![VIEW_Table](Q1.png)
 
